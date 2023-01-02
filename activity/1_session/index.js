@@ -1,7 +1,7 @@
 
 // Ejercicio 1
 console.log('Importar archivo aboutme')
-// import "./aboutme.js";
+import "./aboutme.js";
 console.log("Ejercicio 1");
 
 // Ejercicio 2
