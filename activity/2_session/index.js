@@ -23,7 +23,61 @@ console.log( getKeysObject( person ))
 // Ejercicio 2
 console.log("*******************")
 console.log("Ejercicio 2");
-// console.log("this", this )
+console.log("Enumera los distintos valores que puede tener “this” y pon un ejemplo de cada uno.")
+
+console.log("Contexto global")
+console.log("this == window => ", this == window );
+console.log("Función function functionName(){}")
+
+function exampleFunction( ) {
+  return this;
+}
+
+console.log("exampleFunction() == window => ", exampleFunction() == window );
+
+console.log("En modo estricto: 'use-strict' ");
+
+function exampleFunction2 () {
+  'use strict'
+  return this;
+}
+console.log("exampleFunction2() == undefined => ", exampleFunction2() == undefined );
+
+console.log("En modo estricto this hace referencia al padre");
+
+let vehiculo = {
+  marca: "Kia",
+  linea: "Sportage",
+  modelo: "2020",
+  getData () {
+    console.log("Datos del vehículo")
+    console.log("Marca: ", this.marca)
+    console.log("Línea", this.linea)
+    console.log("Modelo", this.modelo)
+
+    return `Compra un ${this.marca} ${this.linea} ${this.modelo} con descuento!`
+  }
+}
+
+console.log("vehiculo.getData(): ", vehiculo.getData() )
+
+console.log("En Arrow Function this se refiere al contexto de la función.");
+
+let vehiculo2 = {
+  marca: "Kia",
+  linea: "Picanto",
+  modelo: "2021",
+  getData: () => {
+    console.log("Datos del vehículo")
+    console.log("Marca: ", this.marca)
+    console.log("Línea", this.linea)
+    console.log("Modelo", this.modelo)
+
+    return `Compra un ${this.marca} ${this.linea} ${this.modelo} con descuento!`
+  }
+}
+
+console.log("2 vehiculo.getData(): ", vehiculo2.getData() )
 // Ejercicio 3
 console.log("*******************")
 console.log("Ejercicio 3");
