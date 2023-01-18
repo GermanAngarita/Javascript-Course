@@ -7,7 +7,7 @@ interface Person {
     profession: string;
 }
 
-export const getValuePerson = ( person: Person ): Array<string|number> => {
+const getValuePerson = ( person: Person ): Array<string|number> => {
     const keys = Object.keys( person );
     let valores: Array<string|number> = []
     keys.map( ( key: string ) => {
